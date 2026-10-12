@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PhotoFetch — Privacy Policy</title>
+<meta name="description" content="Privacy policy for PhotoFetch, an Android app.">
+<link rel="canonical" href="https://ivancvetanovic.github.io/PhotoFetch/privacy.html">
+<style>
+  :root { --brand: #0D47A1; }
+  body {
+    margin: 0 auto; padding: 2rem 1.25rem 4rem; max-width: 40rem;
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #1c1b1f; background: #fff;
+  }
+  header { border-bottom: 3px solid var(--brand); padding-bottom: 1rem; margin-bottom: 1.5rem; }
+  h1 { color: var(--brand); font-size: 1.9rem; margin: 0 0 .25rem; }
+  h2 { font-size: 1.15rem; margin: 2rem 0 .5rem; }
+  .meta { color: #6b6a72; font-size: .9rem; margin: 0; }
+  .lede { color: #4a4a52; }
+  a { color: var(--brand); overflow-wrap: anywhere; }
+  ul { padding-left: 1.2rem; }
+  li { margin-bottom: .4rem; }
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #e3e1e6; color: #6b6a72; font-size: .9rem; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e6e1e5; background: #131316; }
+    h1 { color: #90CAF9; }
+    header { border-bottom-color: #2972D8; }
+    .meta, footer { color: #9d99a3; }
+    .lede { color: #b6b2bb; }
+    a { color: #90CAF9; }
+    footer { border-top-color: #34323a; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Privacy Policy</h1>
+  <p class="meta">PhotoFetch · Last updated 12 October 2026</p>
+</header>
+
+<p class="lede">PhotoFetch ("the App") is developed by Ivan Cvetanović ("I", "me"). This policy explains what information the App handles and who else receives it. The App has no user accounts, and I do not run any servers that receive your data.</p>
+<h2>Summary</h2>
+<ul>
+<li>The App reads the photos you allow it to see and builds a search index on your device. The App itself does not upload your photos, the text found in them, or the index; the one route out that the App does not control is Android's own backup (see Backup below).</li>
+<li>Finding text and labels in photos is done on your device by Google's ML Kit, using models that are inside the App. According to Google's documentation, ML Kit also sends Google some technical diagnostics, and photos are not part of that data.</li>
+<li>The App shows one optional rewarded video ad through Google AdMob, which may use your advertising ID (a resettable number Android gives your device for ads). Buying Pro removes it.</li>
+<li>Purchases are handled by Google Play. I never see your payment details.</li>
+<li>If Android backup is on, Google may back up the App's data, including the text found in your photos and the rest of the search index, to your Google account, and Android may copy it to a new phone.</li>
+<li>The App does not ask for permission to use your location, contacts, camera or microphone.</li>
+</ul>
+<h2>Your Photos and Their Search Index on Your Device</h2>
+<p>The App reads the photos in the folders you choose to index. If you share only selected photos with the App in Android's permission dialog, it reads just those. For each photo it works out the text in the picture (OCR), up to five labels for what is shown, such as "Dog" or "Beach", and a CLIP embedding, which is a list of 512 numbers that describes what the picture looks like, so that you can search by description. It also adds the label "Screenshot" when the file name or folder name contains "screenshot".</p>
+<p>All of this happens on your device. The text and label models and the two CLIP models are part of the App, so no photo is sent anywhere to be analyzed and the App does not download any model. Indexing works without an internet connection. When you search, your words are matched against the index on your device, and the App does not save what you search for.</p>
+<p>The index is a database in the App's private storage. For each photo it holds the photo's Android media ID, its file path, the date it was taken, the recognized text, the labels, the ID of the folder it was indexed under, the CLIP embedding, and whether processing has finished. On Android 10, the photo library component the App uses copies each photo it analyses into the App's private cache, and the stored file path is then the path of that copy. Those copies stay in the cache until Android clears it, you clear the App's storage, or you uninstall the App. To show previews, the photo library component may also keep small thumbnail copies of your photos in the App's cache. Android can clear these at any time, and they are removed when you clear the App's storage or uninstall it.</p>
+<p>The App also stores a few settings on your device: whether you have seen the welcome screens, the indexing speed you chose, the folders you chose, whether background indexing waits until your phone is charging, whether the Personalised ads switch is on, whether Pro is unlocked, and when a temporary Fast unlock ends. The two CLIP model files (about 89 MB and 64 MB) are copied from inside the App into its private storage the first time they are needed. They contain no personal data.</p>
+<p>If the App hits an error, it writes the error type, the time, the message and the technical stack trace to a text file called error_log.txt in its private storage. Error messages can contain file names, paths or short pieces of text the App was handling. The App checks the file's size before it adds an entry: if it is already larger than 128 KB, the App empties it first and starts again. The App never sends this file anywhere. When the file is not empty, Settings shows an Error log entry where you can read the log, clear it or copy it.</p>
+<p>The App reads your device's manufacturer, model and number of processor cores. It uses the number of cores to choose a default indexing speed and shows all three in Settings. The App does not send them anywhere itself.</p>
+<p>The App only reads your photos. It does not change, move or delete them. If you copy the text found in a photo, or copy the error log, it goes to your device's clipboard, where other apps you use may be able to read it.</p>
+<h2>Photo Access and Other Permissions</h2>
+<p>The App's main job is to search your whole photo library, including photos you take later. That is why it asks for access to your photos instead of using Android's photo picker, which only gives an app the photos you pick at that moment. I use this access only so that the App can read photos to index them and show them to you.</p>
+<ul>
+<li>Photos (READ_MEDIA_IMAGES, Android 13 and newer): to read your photos for the index. On Android 14 and newer you can allow selected photos only (READ_MEDIA_VISUAL_USER_SELECTED). The App then indexes just those, and Settings offers "Add more photos" if you want to widen the selection.</li>
+<li>Storage (READ_EXTERNAL_STORAGE): the same purpose on Android 12 and older. The App asks for it only on those versions.</li>
+<li>Notifications (POST_NOTIFICATIONS, Android 13 and newer): optional. Used for the progress notification while Fast indexing runs. If you decline, indexing still works.</li>
+<li>Foreground service (FOREGROUND_SERVICE, FOREGROUND_SERVICE_DATA_SYNC) and keep awake (WAKE_LOCK): so that Fast indexing can keep running while the App is in the background. It stops when indexing finishes or when you swipe the App away.</li>
+<li>Run at startup (RECEIVE_BOOT_COMPLETED): declared by the App and by the background-work libraries it uses. The App does not use it to open itself or to start the foreground service when your phone starts.</li>
+<li>Internet (INTERNET): used by Google's ads and ML Kit libraries, as described below. The App's own code does not use the internet.</li>
+<li>Google's libraries add a few more permissions automatically: network state, the advertising ID and related ad-services permissions, Google Play billing (BILLING), and technical ones their libraries use internally (for example to receive messages).</li>
+</ul>
+<p>You can take back photo access at any time in Android settings. The App then stops indexing and tells you it needs access again. It does not delete the index when that happens.</p>
+<h2>Text and Label Recognition (Google ML Kit)</h2>
+<p>The App uses Google's ML Kit libraries to find text and labels in your photos. The recognition models are included in the App, and ML Kit analyses each photo on your device. According to Google's documentation, ML Kit also collects technical data and sends it to Google over an encrypted connection, for diagnostics and usage analytics: device information (such as manufacturer, model, Android version and build), the App's package name and version, a per-installation identifier that is not meant to identify you, performance measurements, settings such as image format and resolution, input and output sizes, and event and error codes. Google's list does not include your photos, the text found in them or the labels. Like any online request, the data reaches Google's servers together with your device's IP address. I do not control this, and the App has no setting to turn it off. Google's own description is at:</p>
+<ul>
+<li><a href="https://developers.google.com/ml-kit/android-data-disclosure">https://developers.google.com/ml-kit/android-data-disclosure</a></li>
+</ul>
+<h2>Advertising (Google AdMob)</h2>
+<p>The App has one kind of ad: an optional rewarded video that you can watch to unlock Fast indexing for 30 minutes. The App has no banner, interstitial or app-open ads, and it shows an ad only after you tap the button to watch one.</p>
+<p>To have an ad ready, the App asks Google for an ad ahead of time, but only after Google's consent tool (described below) says that ads may be requested where you are. It does this when you pick how fast to index during setup and when you open the Fast unlock options, and it loads a new ad after you have watched one. So Google can receive data when the App asks for an ad, even if you never watch it. Ads are provided by Google AdMob. Google and its advertising partners may use information such as your advertising ID, app set ID and, if applicable, other identifiers related to signed-in accounts on your device, IP address (from which approximate location may be inferred), diagnostic information about the App and the ad library, and how you interact with ads to show, measure and personalize ads and to prevent fraud.</p>
+<p>In the European Economic Area, the United Kingdom, Switzerland and other regions where consent is required, the App shows Google's consent form (Google's User Messaging Platform) when it sets up ads. The advertising partners that may receive data are listed in that form, and Google's tool saves your choice on your device. If the form applies where you are, you can reopen it and change or withdraw your choice in Settings, in the ADS &amp; PRIVACY section, under Ad privacy options (an internet connection is needed). If you withdraw consent, Google may stop serving the rewarded ad to you. Every other feature of the App keeps working.</p>
+<p>In Settings, under ADS &amp; PRIVACY, the Personalised ads switch (on by default) lets you ask Google for non-personalized ads instead. It applies to the next ad the App requests, and the App discards an ad it had already loaded under the old setting. Google may still use some data for things such as limiting how often you see an ad and preventing fraud.</p>
+<p>You can reset your advertising ID or opt out of ad personalization in your Android settings (usually under Settings &gt; Google &gt; Ads; the exact path depends on your device).</p>
+<p>Buying Pro removes the ad, and the App then no longer offers it. Google describes the data its ads library collects at <a href="https://developers.google.com/admob/android/privacy/play-data-disclosure">https://developers.google.com/admob/android/privacy/play-data-disclosure</a> and explains how it uses data in ads and in apps that use its services here:</p>
+<ul>
+<li><a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a></li>
+<li><a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a></li>
+</ul>
+<h2>Purchases (Google Play Billing)</h2>
+<p>The App offers one optional one-time purchase, PhotoFetch Pro. Apart from Fast indexing, every feature of the App is free. Pro keeps Fast indexing on permanently and removes the ad. Google Play processes the payment. I do not receive or store your card or payment details, and the App only remembers, on your device, whether Pro has been unlocked. Google Play may show me purchase records, such as an order ID, in the Play Console.</p>
+<p>When the App starts, and when you tap Restore purchases in Settings, it asks Google Play whether you already own Pro, so that Pro is unlocked again after a reinstall or on a new phone. I run no server that checks purchases: the App relies on the answer Google Play gives it on your device. For more information, see <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>.</p>
+<h2>Backup</h2>
+<p>The App does not switch Android's backup off and does not set its own backup rules. If backup is on for your device, Google may therefore back up the App's data to your Google account, under Google's terms, and Android may copy it to a new phone when you set one up. This data can include the search index (file paths, recognized text, labels and embeddings), your settings, the error log and the CLIP model files. Android limits automatic cloud backups to a small amount of data per app, so a large index may not be backed up to your Google account at all, but a phone-to-phone transfer can still copy it. Your photos themselves are not part of the App's data and are not backed up by the App. I do not have access to these backups. Backup copies held in your Google account are not removed when you uninstall the App. You can manage or delete them in your Android or Google backup settings.</p>
+<h2>Children's Privacy</h2>
+<p>The App is not intended for children. I do not knowingly collect personal information from anyone under 13, or under the age at which the law of your country lets you consent to online services yourself (13 to 16 in the EEA and the United Kingdom).</p>
+<h2>Your Choices and Rights</h2>
+<p>I do not run a server or user accounts that receive your data. Google (AdMob, ML Kit and Google Play) receives data as described above. If you have turned on Usage &amp; diagnostics in Android, Google Play may also give me crash and performance reports from your device (Android vitals). They describe the App's technical state and do not contain your photos. Everything else the App stores is on your device. You can delete the search index at any time with Reset index in Settings, which clears the index and lets you pick folders again. Reset index does not remove the CLIP model files, the error log or your other settings (you can clear the log in Settings). Clearing the App's storage or uninstalling it deletes everything the App stored on your device. Data held by Google, including backup copies, is governed by Google's own policies and tools.</p>
+<p>If you are in the European Economic Area or the United Kingdom: personalized advertising is based on your consent, which you can withdraw at any time as described in the Advertising section above. The search index is built on your device to provide the search feature you installed the App for, and I do not receive it. Data may be processed by Google outside your country. You have the right to ask for access to, correction of, or deletion of personal information about you, to object to or restrict its use, and to complain to your local data protection authority (in the United Kingdom, the Information Commissioner's Office). Because the App sends no personal information to me, and what I can see from Google is limited to purchase records, aggregate ad reports and Android vitals reports, requests about data held by Google usually need to go to Google, but you can contact me with any question at the address below.</p>
+<h2>Data Security</h2>
+<p>I take reasonable measures to protect the App and make sure it operates securely. The index, settings and error log are kept in the App's private storage, which Android keeps separate from other apps. Google says that its ads and ML Kit libraries send data over encrypted connections. However, no method of electronic storage or transmission over the internet is completely secure, and the security of your data also depends on your device, for example a screen lock and an up-to-date Android.</p>
+<h2>Changes to This Privacy Policy</h2>
+<p>I may update this Privacy Policy from time to time. Changes will be posted on this page with a new "Last updated" date. For material changes I will also say so in the update notes on Google Play.</p>
+<h2>Contact</h2>
+<p>If you have any questions about this Privacy Policy, you can contact me at:</p>
+<p><a href="mailto:icvetanovic99@gmail.com?subject=PhotoFetch%20privacy">icvetanovic99@gmail.com</a></p>
+
+<footer>
+  PhotoFetch · Ivan Cvetanović · <a href="mailto:icvetanovic99@gmail.com?subject=PhotoFetch%20privacy">icvetanovic99@gmail.com</a>
+</footer>
+</body>
+</html>
