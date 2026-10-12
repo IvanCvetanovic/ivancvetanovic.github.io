@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magic Rampage: Companion — Privacy Policy</title>
+<meta name="description" content="Privacy policy for Magic Rampage: Companion, an Android app.">
+<link rel="canonical" href="https://ivancvetanovic.github.io/MagicRampageCompanion/privacy.html">
+<style>
+  :root { --brand: #6E45C8; }
+  body {
+    margin: 0 auto; padding: 2rem 1.25rem 4rem; max-width: 40rem;
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #1c1b1f; background: #fff;
+  }
+  header { border-bottom: 3px solid var(--brand); padding-bottom: 1rem; margin-bottom: 1.5rem; }
+  h1 { color: var(--brand); font-size: 1.9rem; margin: 0 0 .25rem; }
+  h2 { font-size: 1.15rem; margin: 2rem 0 .5rem; }
+  .meta { color: #6b6a72; font-size: .9rem; margin: 0; }
+  .lede { color: #4a4a52; }
+  a { color: var(--brand); overflow-wrap: anywhere; }
+  ul { padding-left: 1.2rem; }
+  li { margin-bottom: .4rem; }
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #e3e1e6; color: #6b6a72; font-size: .9rem; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e6e1e5; background: #131316; }
+    h1 { color: #CDB8F5; }
+    header { border-bottom-color: #9B6DE0; }
+    .meta, footer { color: #9d99a3; }
+    .lede { color: #b6b2bb; }
+    a { color: #CDB8F5; }
+    footer { border-top-color: #34323a; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Privacy Policy</h1>
+  <p class="meta">Magic Rampage: Companion · Last updated 12 October 2026</p>
+</header>
+
+<p class="lede">Magic Rampage: Companion ("the App") is developed by Ivan Cvetanović ("I", "me"). It is a companion for the mobile game Magic Rampage: it shows game information and has planning tools and an editor for levels, characters and effects. This policy explains what information the App handles and who else receives it. The App has no user accounts and does not log in to any game account. I do not run any servers of my own that receive your data, but I do receive crash reports and usage statistics through Google's Firebase, as described below.</p>
+<h2>Summary</h2>
+<ul>
+<li>The App has no accounts. The levels, characters and effects you create, your saved equipment loadouts and your settings are stored on your device.</li>
+<li>When it starts, the App downloads item data and live game values from GitHub and from a game-data server, and the News screen reads posts from GitHub. These requests contain nothing about you except what every internet request contains, such as your IP address.</li>
+<li>The App shows ads through Google AdMob: a full-screen ad when you come back to the App after using something else, and optional rewarded video ads. AdMob may use your advertising ID (a resettable number Android gives your device for ads).</li>
+<li>The App includes Google's Firebase Analytics and Crashlytics, which send me usage statistics and crash reports tied to random installation IDs, not to your name. There is no switch in the App to turn them off.</li>
+<li>If the App is set to a language other than English, opening News downloads a translation model from Google. The translating itself happens on your device.</li>
+<li>The App does not ask for permission to use your location, contacts, camera, microphone, photos or files. If Android backup is on, Google may back up the App's data to your Google account.</li>
+</ul>
+<h2>Your Creations and Settings on Your Device</h2>
+<p>The App stores the following on your device: the levels, characters and effects you create or import in the Editor, your saved equipment loadouts and skill choices in the Gear Planner, your settings (such as the language), which tips and guides it has already shown, which secret areas you have unlocked, and downloaded copies of the item catalogue, the live game values and the News posts. Removing the App or clearing its storage deletes this data from your device. If Android backup is on, a copy may also be held in your Google backup (see Updates and Backup below).</p>
+<p>When you import or export a level, character, effect or picture, or back them up, the App uses Android's file picker, so a file is read from or saved to exactly the place you choose, and the App needs no storage permission. If you choose a cloud folder, that provider will hold the file.</p>
+<h2>Game Data from GitHub and a Game-Data Server</h2>
+<p>Each time the home screen starts (for example when you open the App or change its language), the App makes two requests so that its item and balance numbers stay current. One goes to GitHub (gist.githubusercontent.com) for a public file that lists the game's items and their stats. The other goes to a game-data server at api.dkgamedev.com, which supplies the game's live balance values. What comes back is saved on your device, so the App also works offline.</p>
+<p>These are plain requests with no information about you in them. The servers receive your IP address and the standard details that come with any request, which on Android typically include your device model and Android version; the App adds nothing else and sets no identifier. I do not operate api.dkgamedev.com and do not control GitHub, and I cannot say how long either keeps request data.</p>
+<p>There is no setting to turn these requests off. If you are offline, the App uses the copies saved on your device or, on first use, the data built into the App.</p>
+<h2>News from GitHub</h2>
+<p>The News screen shows posts from a public GitHub Gist. The App reads them from GitHub's API (api.github.com) when you open News and when you pull down to refresh. Whenever the home screen comes to the front, the App also checks for new posts so it can show an unread badge on the News tile, at most once every 30 minutes (or after about 10 minutes if the last check failed). The posts are saved on your device. GitHub receives your IP address and the standard request details described above; the App sends nothing else.</p>
+<h2>Translating News (Google ML Kit)</h2>
+<p>If the App is set to a language other than English (by default your device language; you can change it with the Change Language icon at the top right of the home screen), opening News makes the App download a translation model for that language from Google, using Google's ML Kit, unless the model is already on your device. News posts are then translated on your device and are not sent to Google for translation. Google receives your IP address with the download, and ML Kit sends Google technical information, such as device information, the App's name and version, installation identifiers, performance data and the language pair, for diagnostics and usage analytics. ML Kit also uses Firebase Remote Config and Firebase installations for remote-configuration diagnostics. The model is downloaded over whatever connection your device is using, including mobile data. Google states that this data is encrypted in transit and not transferred to third parties. If the download fails, the App tells you and carries on. More information:</p>
+<ul>
+<li><a href="https://developers.google.com/ml-kit/android-data-disclosure">https://developers.google.com/ml-kit/android-data-disclosure</a></li>
+</ul>
+<h2>Advertising (Google AdMob)</h2>
+<p>The App shows ads through Google AdMob: a full-screen ad when you come back to the App after using something else, and optional rewarded video ads that you can choose to watch to get a suggested equipment set with the Get Set button in the Gear Planner, or to show the secret areas of a level in the Editor. The App has no banner ads. Google and its advertising partners may use information such as your device information, advertising ID, IP address (from which approximate location may be inferred) and how you interact with ads to show, measure and personalize ads and to prevent fraud. The App's configuration also allows Google's ads software to use Android's ad-services features (part of Android's Privacy Sandbox) for ad personalization, where your device offers them. Google's ads software also collects an app-set ID and diagnostic information about how the App and the ads perform, and it may store and read identifiers on your device (for example in the App's storage or in the web view used to show ads).</p>
+<p>When the App starts, it contacts Google's consent service (the User Messaging Platform) to find out whether a consent form is required where you are. In the European Economic Area, the United Kingdom and other regions where consent is required, the App shows Google's consent form, and the advertising partners that may receive data are listed in that form. The App requests the full-screen ad only after this check allows ads. The optional rewarded ads are loaded in advance when you open the Gear Planner or a level in the Editor, so that one is ready if you choose to watch it.</p>
+<p>If a consent form applies to you, you can reopen it and change your choice at any time with the Ad Preferences button, the lower of the two icon buttons at the top right of the home screen (the upper one changes the language). If no form applies where you are, or the App could not check (for example because you are offline), it shows a short message instead. You can also reset your advertising ID or opt out of ad personalization in your Android settings (usually under Settings &gt; Privacy &gt; Ads or Settings &gt; Google &gt; Ads; the exact path depends on your device). More information about how Google uses data in ads and in apps that use its services:</p>
+<ul>
+<li><a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a></li>
+<li><a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a></li>
+</ul>
+<h2>Usage Statistics and Crash Reports (Google Firebase)</h2>
+<p>The App includes Google's Firebase Analytics and Firebase Crashlytics. They start automatically when the App starts, the App has no setting to turn them off, and the App itself does not use the consent form to start or stop them. I have not added any tracking of my own: the App sends no custom events and sets no user ID or name, so what I receive is what these Google tools collect automatically.</p>
+<p>Firebase Analytics collects, among other things, a random app-instance ID, your advertising ID if one is available, the general area you are in (worked out from your IP address), and the screens you view and your sessions. When the App crashes, Crashlytics collects the technical details of the crash, the state of the App at that moment, basic information about your device (such as its model and Android version) and a random installation ID, so that I can see how many people a crash affects. Crashlytics also relies on Firebase's sessions service, which collects the App's package name, operating system information, your device's manufacturer and model, the type of network connection and when you start using the App, so that crash and performance statistics can be calculated; it does this for every session, not only when the App crashes. Firebase also gives each installation of the App a random Firebase installation ID.</p>
+<p>I use the crash reports to find and fix crashes, and the usage statistics to see how the App is used. I do not receive your name or email address through these tools. Google handles this data under its Firebase terms and privacy policy. More information:</p>
+<ul>
+<li><a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a></li>
+<li><a href="https://support.google.com/analytics/answer/11582702">https://support.google.com/analytics/answer/11582702</a></li>
+</ul>
+<h2>Updates and Backup</h2>
+<p>Google Play may offer you app updates inside the App: the App asks Google Play whether a newer version is available and, if there is one, shows a message with an option to update. This check is made through Google Play, under Google's privacy policy.</p>
+<p>The App allows Android's Auto Backup and I have not restricted it: the backup rules in the App are empty, so Android's defaults apply. If backup is on for your device, Google may back up most of the data the App stores on it (such as your levels, characters, effects, loadouts, settings and the downloaded copies of game data and news) to your Google account, and Android may copy it to a new device when you set one up. I do not have access to these backups. Backup copies held in your Google account are not removed when you uninstall the App; you can manage or delete them in your Android or Google backup settings.</p>
+<h2>Links to Other Sites and Apps</h2>
+<p>The About screen, the guides and the Bloody Portals comic page contain links to other sites and apps, such as Facebook, Instagram, X, Discord, WEBTOON and GitHub. A link opens in your browser or in the matching app only when you tap it. The App itself sends nothing to those sites; from the moment a link opens, the site's or app's own privacy policy applies.</p>
+<h2>Children's Privacy</h2>
+<p>The App is not intended for children under 13 (or under the minimum age required in your country), and I do not knowingly collect personal information from children.</p>
+<h2>Your Choices and Rights</h2>
+<p>I do not run user accounts or servers of my own that receive your data. Google (AdMob, Firebase, ML Kit and Google Play), GitHub and the game-data server receive data as described above. You can delete the data the App stores on your device at any time by clearing its storage or uninstalling it, and you can reset your advertising ID in your Android settings. Data held by Google, GitHub or the game-data server is governed by their own policies and tools.</p>
+<p>How long data is kept: Google keeps Crashlytics crash data (stack traces and the identifiers attached to them) for 90 days before it starts removing it from its systems, according to Google's documentation at <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a>. How long usage statistics are kept is governed by the data retention setting of my Google Analytics property and by Google's policies. I delete nothing myself, and the App has no accounts. Data kept by GitHub, the game-data server and Google's advertising services is kept under their own policies. Data stored on your device stays there until you clear the App's storage or uninstall it.</p>
+<p>If you are in the European Economic Area or the United Kingdom: personalized advertising is based on your consent, which you can withdraw at any time as described in the Advertising section above; the downloads of game data and News are made to provide the features you use. Data may be processed by Google, GitHub and the game-data server outside your country. You have the right to ask for access to, correction of, or deletion of personal information about you, to object to or restrict its use, and to complain to your local data protection authority (in the United Kingdom, the Information Commissioner's Office). The crash and usage data I receive is tied to random installation IDs rather than to your name, so I may not be able to find the records that belong to you, and requests about data held by Google, GitHub or the game-data server usually need to go to them, but you can contact me with any question at the address below.</p>
+<h2>Data Security</h2>
+<p>I take reasonable measures to protect the App and make sure it operates securely. Every request the App itself makes (to GitHub and to the game-data server) uses an encrypted HTTPS connection, and Google says that the data its tools in the App send is encrypted in transit. However, no method of electronic storage or transmission over the internet is completely secure.</p>
+<h2>Changes to This Privacy Policy</h2>
+<p>I may update this Privacy Policy from time to time. Changes will be posted on this page with a new "Last updated" date. For material changes I will also say so in the update notes on Google Play.</p>
+<h2>Contact</h2>
+<p>If you have any questions about this Privacy Policy, you can contact me at:</p>
+<p><a href="mailto:icvetanovic99@gmail.com?subject=Magic%20Rampage%20Companion%20privacy">icvetanovic99@gmail.com</a></p>
+
+<footer>
+  Magic Rampage: Companion · Ivan Cvetanović · <a href="mailto:icvetanovic99@gmail.com?subject=Magic%20Rampage%20Companion%20privacy">icvetanovic99@gmail.com</a>
+</footer>
+</body>
+</html>
